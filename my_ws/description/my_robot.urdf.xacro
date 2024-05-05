@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="link_joint_test.xacro"/>
+
+    <xacro:m_link_box name="base_link"
+                      origin_xyz="0 0 0" origin_rpy="0 0 0"
+                      size="1 1 1"/>
+
+    <xacro:m_joint_base name="base_link_to_link_01" type="revolute"
+                        parent="base_link"
+                        child="link_01"
+                        origin_xyz="0 0 0.5" origin_rpy="0 0 0"
+                        axis_xyz="0 0 1"/>
+
+    <xacro:m_link_cylinder name="link_01"
+                           origin_xyz="0 0 0.2" origin_rpy="0 0 0"
+                           radius="0.35" length="0.4"/>
+
+    <xacro:m_joint name="link_01_to_link_02" type="revolute"
+                   parent="link_01"
+                   child="link_02"
+                   origin_xyz="0 0 0.4" origin_rpy="0 0 0"
+                   axis_xyz="0 1 0"/>
+
+    <xacro:m_link_cylinder name="link_02"
+                           origin_xyz="0 0 0.4" origin_rpy="0 0 0"
+                           radius="0.15" length="0.8"/>
+
+    <xacro:m_joint name="link_02_to_link_03" type="revolute"
+                   parent="link_02"
+                   child="link_03"
+                   origin_xyz="0 0 0.8" origin_rpy="0 0 0"
+                   axis_xyz="0 1 0"/>
+
+    <xacro:m_link_cylinder name="link_03"
+                           origin_xyz="0 0 0.4" origin_rpy="0 0 0"
+                           radius="0.15" length="0.8"/>
+
+    <xacro:m_joint name="link_03_to_link_04" type="revolute"
+                   parent="link_03"
+                   child="link_04"
+                   origin_xyz="0 0 0.8" origin_rpy="0 0 0"
+                   axis_xyz="0 1 0"/>
+
+    <xacro:m_link_cylinder name="link_04"
+                           origin_xyz="0 0 0.4" origin_rpy="0 0 0"
+                           radius="0.15" length="0.8"/>
+
+    <xacro:m_joint name="link_04_to_link_05" type="revolute"
+                   parent="link_04"
+                   child="link_05"
+                   origin_xyz="0 0 0.8" origin_rpy="0 0 0"
+                   axis_xyz="0 0 1"/>
+
+    <xacro:m_link_cylinder name="link_05"
+                           origin_xyz="0 0 0.125" origin_rpy="0 0 0"
+                           radius="0.15" length="0.25"/>
+
+</robot>
